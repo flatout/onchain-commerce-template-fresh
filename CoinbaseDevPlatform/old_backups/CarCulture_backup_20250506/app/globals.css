@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-background: #000000;
+  --app-foreground: #ffffff;
+  --app-accent: #3b82f6;
+  --app-gray: #1a1a1a;
+  --app-card-border: #2a2a2a;
+  --app-foreground-muted: #9ca3af;
+  --app-card-bg: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background-color: var(--app-background);
+  color: var(--app-foreground);
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80%;
+}
+
+.mini-app-theme {
+  background-color: var(--app-background);
+  color: var(--app-foreground);
+  --ock-bg-default: var(--app-background);
+  --ock-bg-default-hover: var(--app-gray);
+  --ock-bg-default-active: #2a2a2a;
+  --ock-text-foreground: var(--app-foreground);
+  --ock-text-foreground-muted: var(--app-foreground-muted);
+}

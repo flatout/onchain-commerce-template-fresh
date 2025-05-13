@@ -1,0 +1,13 @@
+{
+  "frames": {
+    "version": "vNext",
+    "image": "http://localhost:3002/preview.png",
+    "buttons": [
+      {
+        "label": "Mint NFT",
+        "action": "post"
+      }
+    ],
+    "post_url": "http://localhost:3002/api/frame"
+  }
+} 
