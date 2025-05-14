@@ -1,21 +1,38 @@
 {
-  "devDependencies": {
-    "ethers": "^5.8.0"
+  "name": "caroftheday",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "vercel-build": "next build"
   },
   "dependencies": {
-    "@coinbase/coinbase-sdk": "^0.23.0",
     "@coinbase/onchainkit": "^0.38.13",
-    "@dynamic-labs/ethereum": "^4.12.3",
-    "@dynamic-labs/sdk-react-core": "^4.12.3",
-    "@farcaster/frame-sdk": "^0.0.35",
-    "@openzeppelin/contracts": "^4.7.3",
-    "@openzeppelin/defender-sdk-deploy-client": "^2.5.0",
-    "@openzeppelin/platform-deploy-client": "^1.51.1",
-    "@sentry/node": "^9.13.0",
-    "@tanstack/react-query": "^5.75.5",
-    "axios": "^1.8.4",
-    "frames": "^0.0.1",
-    "viem": "^2.29.0",
-    "wagmi": "^2.15.2"
-  }
+    "@farcaster/core": "^0.16.4",
+    "@neynar/nodejs-sdk": "^1.21.1",
+    "@tanstack/react-query": "^5",
+    "frames.js": "^0.22.0",
+    "next": "14.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "viem": "^2.27.2",
+    "wagmi": "^2.14.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "_vercel_redeploy": "1"
 }
