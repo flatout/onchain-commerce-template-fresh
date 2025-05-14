@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { NeynarAPIClient } from '@neynar/nodejs-sdk';
 
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY || 'NEYNAR_FROG_FM';
+
+if (!NEYNAR_API_KEY) {
+  throw new Error('NEYNAR_API_KEY is not set. Please add it to your environment variables.');
+}
+
 const CONTRACT_ADDRESS = '0x44dF55B47F24B73190657fE9107Ca43234bbc21E';
 const BASE_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001';
 
@@ -106,4 +111,4 @@ export async function POST(req: NextRequest): Promise<Response> {
   }
 }
 
-export const dynamic = 'force-dynamic'; 
+export const dynamic = 'force-dynamic';
