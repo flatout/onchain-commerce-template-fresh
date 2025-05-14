@@ -5,7 +5,7 @@ const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY || 'NEYNAR_FROG_FM';
 const CONTRACT_ADDRESS = '0x44dF55B47F24B73190657fE9107Ca43234bbc21E';
 const BASE_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001';
 
-const client = new NeynarAPIClient(NEYNAR_API_KEY);
+const client = new NeynarAPIClient({ apiKey: NEYNAR_API_KEY });
 
 export async function POST(req: NextRequest): Promise<Response> {
   try {
