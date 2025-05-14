@@ -27,7 +27,7 @@ export default function CustomNFTCard({ imageUrl, title, description, contractAd
       <img
         src={imageUrl}
         alt={title}
-        style={imageStyles[layout]}
+        style={{ width: '100%', height: 'auto', objectFit: 'cover', borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }}
       />
       <div className="flex flex-col items-center w-full px-6 py-4">
         <h3 className="text-xl font-bold text-white mt-2 mb-1 w-full text-center">{title}</h3>
