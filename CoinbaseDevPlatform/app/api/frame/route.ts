@@ -10,7 +10,7 @@ if (!NEYNAR_API_KEY) {
 const CONTRACT_ADDRESS = '0x44dF55B47F24B73190657fE9107Ca43234bbc21E';
 const BASE_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001';
 
-const client = new NeynarAPIClient({ apiKey: NEYNAR_API_KEY });
+const client = new NeynarAPIClient(NEYNAR_API_KEY);
 
 export async function POST(req: NextRequest): Promise<Response> {
   try {
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       JSON.stringify({
         frames: {
           version: 'vNext',
-          image: `${BASE_URL}/mint-preview.png`,
+          image: `${BASE_URL}/1155-images/man-driving-car.jpg`,
           buttons: [
             {
               label: '💬',
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           post_url: `${BASE_URL}/api/frame`,
           og_title: "Car of the Day - Rules of the Road 1",
           og_description: "Mint your exclusive Car of the Day NFT on Base",
-          og_image: `${BASE_URL}/mint-preview.png`
+          og_image: `${BASE_URL}/1155-images/man-driving-car.jpg`
         }
       }),
       {

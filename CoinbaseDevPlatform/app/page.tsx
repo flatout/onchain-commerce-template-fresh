@@ -3,13 +3,11 @@
 import React from 'react';
 import { ConnectWallet, Wallet } from '@coinbase/onchainkit/wallet';
 import { IdentityCard } from '@coinbase/onchainkit/identity';
-import { NFTMintCard } from '@coinbase/onchainkit/nft';
 import { base } from 'viem/chains';
 import Head from 'next/head';
 import { useAccount } from 'wagmi';
 import TitleBar from './components/TitleBar';
-import Footer from './components/Footer';
-import NFTDetails from './components/NFTDetails';
+import CustomNFTCard from './components/CustomNFTCard';
 import Image from 'next/image';
 
 const BASE_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001';
@@ -34,23 +32,25 @@ export default function App() {
           <div className="flex flex-col items-center space-y-8">
             <div className="w-full max-w-lg flex flex-col items-center">
               <div className="text-center mb-4">
-                <h2 className="text-2xl font-bold text-white mb-2">Collectible Cars for Maniacs</h2>
-                <p className="text-gray-400">Mint your exclusive Car of the Day NFT on Base Network</p>
+                <Image
+                  src="/carmania-trans-logo.png"
+                  alt="CarMania Logo"
+                  width={316}
+                  height={106}
+                  className="object-contain mx-auto mb-2"
+                  style={{ marginTop: '20px' }}
+                  priority
+                />
+                <div className="text-lg font-semibold text-white mb-1">Celebrating Art and Provenance</div>
+                <p className="text-gray-400">Mint your exclusive Car of the Day NFT on Base Mainnet</p>
               </div>
               <div className="flex flex-col items-center w-full">
-                <Image
-                  src="/1155-images/man-driving-car.jpg"
-                  alt="Car of the Day NFT"
-                  width={400}
-                  height={400}
-                  className="object-contain rounded-lg mb-4"
-                />
-                <NFTMintCard 
+                <CustomNFTCard
+                  imageUrl="/1155-images/man-driving-car.jpg"
+                  title="Man Driving Car"
+                  description="Let your hair blow back behind the wheel of a fine automobile"
                   contractAddress="0x0f83d2f2cfd23222414e19db3246aa7695862992"
-                />
-                <NFTDetails 
-                  initialTitle="Man Driving Car"
-                  initialDescription="Let your hair blow back behind the wheel of a fine automobile"
+                  layout="square"
                 />
               </div>
               <div className="mt-8 flex justify-center w-full">
@@ -78,7 +78,6 @@ export default function App() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

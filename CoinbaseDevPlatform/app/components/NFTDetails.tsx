@@ -5,11 +5,13 @@ import React, { useState } from 'react';
 interface NFTDetailsProps {
   initialTitle?: string;
   initialDescription?: string;
+  imageUrl?: string;
 }
 
 export default function NFTDetails({ 
   initialTitle = "Rules of the Road 1",
-  initialDescription = "A unique NFT capturing the essence of road safety and driving culture."
+  initialDescription = "A unique NFT capturing the essence of road safety and driving culture.",
+  imageUrl = ""
 }: NFTDetailsProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(initialTitle);
@@ -54,6 +56,14 @@ export default function NFTDetails({
 
   return (
     <div className="mt-6 text-center group relative">
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={title}
+          className="mx-auto mb-4 rounded-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      )}
       <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
       <p className="text-gray-400">{description}</p>
       <button
