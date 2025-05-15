@@ -46,7 +46,7 @@ export default function App() {
                 <p className="text-gray-400">Mint your exclusive Car of the Day NFT on Base Mainnet</p>
               </div>
               <div className="flex flex-col items-center w-full">
-                <NFTMintCard contractAddress="0x0f83d2f2cfd23222414e19db3246aa7695862992" />
+                <NFTMintCard contractAddress="0x1c6d27a76f4f706cccb698acc236c31f886c5421" tokenId="4256950512" />
               </div>
               <div className="mt-8 flex justify-center w-full">
                 <Wallet>
