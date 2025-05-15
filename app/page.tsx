@@ -1,3 +1,5 @@
+'use client';
+
 import { ConnectWallet, Wallet } from '@coinbase/onchainkit/wallet';
 import { IdentityCard } from '@coinbase/onchainkit/identity';
 import { base } from 'viem/chains';
