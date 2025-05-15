@@ -10,15 +10,9 @@ interface CustomNFTCardProps {
 }
 
 const layoutStyles = {
-  square: 'flex flex-col items-center w-[499px]',
-  vertical: 'flex flex-col items-center w-64',
+  square: 'flex flex-col items-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg',
+  vertical: 'flex flex-col items-center w-full max-w-xs sm:max-w-sm',
   horizontal: 'flex flex-row items-center w-full max-w-2xl',
-};
-
-const imageStyles = {
-  square: { width: '499px', height: '499px', objectFit: 'cover' as React.CSSProperties['objectFit'], borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' },
-  vertical: { width: '100%', height: '200px', objectFit: 'cover' as React.CSSProperties['objectFit'], borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' },
-  horizontal: { width: '192px', height: '192px', objectFit: 'cover' as React.CSSProperties['objectFit'], borderRadius: '0.75rem', marginRight: '1.5rem' },
 };
 
 export default function CustomNFTCard({ imageUrl, title, description, contractAddress, layout = 'square' }: CustomNFTCardProps) {
@@ -27,11 +21,11 @@ export default function CustomNFTCard({ imageUrl, title, description, contractAd
       <img
         src={imageUrl}
         alt={title}
-        style={{ width: '100%', height: 'auto', objectFit: 'cover', borderTopLeftRadius: '0.75rem', borderTopRightRadius: '0.75rem' }}
+        className="w-full h-auto object-cover rounded-t-xl"
       />
       <div className="flex flex-col items-center w-full px-6 py-4">
-        <h3 className="text-xl font-bold text-white mt-2 mb-1 w-full text-center">{title}</h3>
-        <p className="text-gray-400 mb-4 w-full text-center">{description}</p>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mt-2 mb-1 w-full text-center">{title}</h3>
+        <p className="text-gray-400 mb-4 w-full text-center text-sm sm:text-base">{description}</p>
         <NFTMintCard contractAddress={contractAddress as `0x${string}`} />
       </div>
     </div>
