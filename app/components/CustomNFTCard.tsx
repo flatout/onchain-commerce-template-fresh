@@ -17,7 +17,7 @@ const layoutStyles = {
 
 export default function CustomNFTCard({ imageUrl, title, description, contractAddress, layout = 'square' }: CustomNFTCardProps) {
   return (
-    <div className={`bg-gray-900 rounded-xl shadow-lg ${layoutStyles[layout]} border-4 border-gray-800 p-0 overflow-hidden`}>
+    <div className={`bg-yellow-300 border-4 border-red-500 rounded-xl shadow-lg w-[16px] sm:w-auto ${layoutStyles[layout]} overflow-hidden`}>
       <img
         src={imageUrl}
         alt={title}
