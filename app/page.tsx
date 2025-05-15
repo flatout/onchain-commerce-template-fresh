@@ -8,7 +8,7 @@ import { base } from 'viem/chains';
 import Head from 'next/head';
 import { useAccount } from 'wagmi';
 import TitleBar from './components/TitleBar';
-import CustomNFTCard from './components/CustomNFTCard';
+import { NFTMintCard } from '@coinbase/onchainkit/nft';
 import Image from 'next/image';
 
 const BASE_URL = process.env.NEXT_PUBLIC_URL || 'http://localhost:3001';
@@ -46,13 +46,7 @@ export default function App() {
                 <p className="text-gray-400">Mint your exclusive Car of the Day NFT on Base Mainnet</p>
               </div>
               <div className="flex flex-col items-center w-full">
-                <CustomNFTCard
-                  imageUrl="/1155-images/man-driving-car.jpg"
-                  title="Man Driving Car"
-                  description="Let your hair blow back behind the wheel of a fine automobile"
-                  contractAddress="0x0f83d2f2cfd23222414e19db3246aa7695862992"
-                  layout="square"
-                />
+                <NFTMintCard contractAddress="0x0f83d2f2cfd23222414e19db3246aa7695862992" />
               </div>
               <div className="mt-8 flex justify-center w-full">
                 <Wallet>
